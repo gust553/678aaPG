@@ -1,0 +1,52 @@
+/* reset simples */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fff;
+  --text:#111;
+  --accent:#1aa260;
+  --muted:#6b7280;
+  --card:#f8fafc;
+}
+body{font-family:Inter, system-ui, Arial, sans-serif;background:linear-gradient(#ffffff,#fbfdff);color:var(--text)}
+.wrap{max-width:1000px;margin:0 auto;padding:18px}
+
+/* topbar */
+.topbar{border-bottom:1px solid #e6eef3;background:#fff;position:sticky;top:0;z-index:20}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between}
+.left{display:flex;align-items:center;gap:12px}
+.mini-icon{width:56px;height:56px;border-radius:12px;object-fit:cover;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.app-title{font-weight:700;font-size:18px}
+.developer{color:var(--muted);font-size:13px}
+
+/* hero-store */
+.main-area{padding:28px 18px}
+.hero-store{display:flex;gap:28px;align-items:flex-start;background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.04)}
+.left-col{flex:0 0 360px;text-align:center}
+.big-icon{width:160px;height:160px;border-radius:28px;object-fit:cover}
+.meta-row{display:flex;gap:14px;align-items:center;justify-content:center;margin-top:12px;color:var(--muted)}
+.rating{font-weight:700}
+.install-area{margin-top:18px}
+.btn-cta{display:inline-block;background:var(--accent);color:#fff;padding:14px 18px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 8px 24px rgba(26,162,96,0.18)}
+.btn-green{background:#12a454;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+/* screenshots */
+.screenshots{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.screenshots img{width:220px;height:400px;object-fit:cover;border-radius:12px;box-shadow:0 10px 40px rgba(2,6,23,0.12)}
+
+/* cards row */
+.cards{display:flex;gap:16px;margin-top:20px}
+.card{flex:1;background:linear-gradient(180deg,#fff,#f7fbff);padding:18px;border-radius:12px;border:1px solid #e8f0f6;text-align:center}
+.card strong{display:block;font-weight:800;color:#ff8a00;margin-bottom:8px}
+.card span{display:block;color:var(--muted)}
+
+/* footer */
+.footer{display:flex;justify-content:space-between;align-items:center;padding:18px;color:var(--muted);font-size:14px;margin-top:28px}
+
+/* mobile */
+@media (max-width:880px){
+  .hero-store{flex-direction:column;align-items:center}
+  .left-col{order:2}
+  .right-col{order:1}
+  .screenshots img{width:160px;height:300px}
+  .cards{flex-direction:column}
+}
