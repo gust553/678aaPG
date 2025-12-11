@@ -4,9 +4,11 @@ const fs = require('fs');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
+app.set('trust proxy', true); // important behind proxies (Render, Vercel, etc)
+
 const PORT = process.env.PORT || 3000;
 
-// helpers simples
+// helpers
 const writeJSON = (file, obj) => {
   try { fs.writeFileSync(file, JSON.stringify(obj, null, 2)); } catch (e) { console.error('writeJSON err', e); }
 };

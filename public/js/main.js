@@ -1,23 +1,44 @@
 (function(){
-  const AFF = 'https://www.678aapg.vip/?id=750701767';
-  // pega params
-  const params = new URLSearchParams(window.location.search);
-  const extra = params.toString();
-  const url = AFF + (extra ? '&' + extra : '');
+  const AFF_BASE = 'https://www.678aapg.vip/?id=750701767';
+  const params = Object.fromEntries(new URLSearchParams(window.location.search).entries());
+
+  // try to record visit (optional)
+  async function recordVisit(){
+    try{
+      await fetch('/api/visit', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ referrer: document.referrer || '', params })
+      });
+    }catch(e){ /* ignore */ }
+  }
+  recordVisit();
+
+  function buildAffiliate(paramsObj){
+    const url = new URL(AFF_BASE);
+    Object.keys(paramsObj||{}).forEach(k=>url.searchParams.set(k, paramsObj[k]));
+    return url.toString();
+  }
+
+  // attach install buttons to call /api/click and then redirect
+  async function handleInstallClick(e){
+    e.preventDefault();
+    try{
+      const res = await fetch('/api/click', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ params }) });
+      const json = await res.json();
+      if(json && json.redirect){
+        window.location.href = json.redirect;
+        return;
+      }
+    }catch(err){ /* ignore fallback */ }
+    window.location.href = buildAffiliate(params);
+  }
 
   document.addEventListener('DOMContentLoaded', ()=>{
     const b1 = document.getElementById('installBtn');
     const b2 = document.getElementById('installBtnTop');
-    if(b1) b1.href = url;
-    if(b2) b2.href = url;
+    if(b1) b1.addEventListener('click', handleInstallClick);
+    if(b2) b2.addEventListener('click', handleInstallClick);
     document.getElementById('year').textContent = new Date().getFullYear();
-  });
-
-  // opcional: tracking simple click
-  document.addEventListener('click',(e)=>{
-    if(e.target && (e.target.id==='installBtn' || e.target.id==='installBtnTop')){
-      // aqui você pode adicionar pixel/analytics
-      console.log('Instalar click ->', url);
-    }
   });
 })();
