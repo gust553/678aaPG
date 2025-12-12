@@ -1,191 +1,175 @@
-/* ===========================
-   Play Store look — final
-   Substitua todo o public/css/style.css
-   =========================== */
-
-/* Reset / base */
+/* RESET */
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#f7fbff;
-  --card:#ffffff;
-  --accent:#ff8a00; /* kept for accents */
-  --green:#1ea962;  /* primary Play-store green */
-  --green-dark:#15894b;
-  --muted:#6b7280;
-  --text:#07142a;
-  --soft-shadow: 0 10px 30px rgba(2,6,23,0.08);
-}
-html,body{height:100%}
 body{
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:var(--bg);
-  color:var(--text);
+  font-family:Inter, system-ui, Arial, sans-serif;
+  background:#f7fbff;
+  color:#07142a;
   -webkit-font-smoothing:antialiased;
-  -webkit-text-size-adjust:100%;
 }
 
-/* container */
-.wrap{max-width:1100px;margin:0 auto;padding:16px}
+/* LAYOUT WRAPPER */
+.wrap{max-width:1100px;margin:0 auto;padding:18px}
 
-/* TOPBAR / HEADER */
-.topbar.playstore-top{
+/* TOP BAR */
+.topbar{
   background:#fff;
-  border-bottom:1px solid #eef3f6;
+  border-bottom:1px solid #e6eef3;
   position:sticky;
   top:0;
-  z-index:60;
-  width:100%;
+  z-index:20;
 }
-.playstore-inner{
+.top-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:12px;
-  padding:12px 16px;
 }
-
-/* Left (icon + title) */
-.play-left{display:flex;align-items:center;gap:12px}
+.left{display:flex;align-items:center;gap:12px}
 .mini-icon{
-  width:60px;height:60px;border-radius:14px;object-fit:cover;box-shadow:0 8px 24px rgba(2,6,23,0.06);
-  border: 1px solid rgba(0,0,0,0.03);
-}
-.app-title{font-weight:800;font-size:18px;line-height:1}
-.developer{color:var(--muted);font-size:13px}
-
-/* RIGHT: large green install pill (top) */
-.install-green{
-  background:linear-gradient(180deg,var(--green),var(--green-dark));
-  color:#fff;
-  padding:10px 18px;
-  border-radius:999px;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  justify-content:center;
-  min-width:240px;
-  box-shadow: 0 8px 30px rgba(29,169,98,0.12);
-  border: 1px solid rgba(0,0,0,0.04);
-}
-.install-green .install-title{font-weight:800;font-size:15px}
-.install-green .install-sub{font-size:12px;opacity:.95;margin-top:3px}
-
-/* HERO (main card under topbar) */
-.play-hero .play-hero-wrap{
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-  background:var(--card);
-  padding:18px;
-  border-radius:14px;
-  margin-top:14px;
-  box-shadow:var(--soft-shadow);
-  border: 1px solid rgba(10,20,30,0.02);
-}
-
-/* left column (info + CTA) */
-.play-col.left-col{
-  flex:0 0 360px;
-  min-width:220px;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:12px;
-}
-
-.play-icon{
-  width:96px;height:96px;border-radius:18px;object-fit:cover;border:1px solid rgba(0,0,0,0.03);
-  box-shadow:0 8px 30px rgba(2,6,23,0.06);
-}
-
-.play-headline{
-  font-size:20px;
-  font-weight:800;
-  line-height:1.05;
-  color:var(--text);
-  margin-top:4px;
-}
-
-/* subtitle */
-.play-sub{color:var(--muted);margin-top:6px;font-size:15px;line-height:1.4}
-
-/* meta row: stars, reviews */
-.play-meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:14px;margin-top:8px}
-
-/* CTA BUTTON (changed to green) */
-.play-cta{
-  display:inline-block;
-  background:linear-gradient(180deg,var(--green),var(--green-dark));
-  color:#fff;
-  padding:14px 18px;
+  width:56px;height:56px;
   border-radius:12px;
-  text-decoration:none;
-  font-weight:800;
-  box-shadow: 0 14px 40px rgba(29,169,98,0.12);
-  border: 1px solid rgba(0,0,0,0.04);
-  margin-top:10px;
-  transition:transform .12s ease, box-shadow .12s ease;
+  object-fit:cover;
+  box-shadow:0 8px 24px rgba(2,6,23,0.06);
 }
-.play-cta:active{transform:translateY(1px)}
-.play-cta:hover{box-shadow: 0 18px 50px rgba(29,169,98,0.16)}
+.app-title{font-weight:700;font-size:18px}
+.developer{color:#6b7280;font-size:13px}
 
-/* right column: thumbnails/carousel */
-.play-col.right-col{flex:1;display:flex;align-items:center;justify-content:flex-end;padding-left:6px}
-.thumb-row{
+/* HEADER AREA */
+.main-area{padding:28px 18px}
+.hero-store{
   display:flex;
-  gap:12px;
-  align-items:center;
-  justify-content:flex-end;
-  overflow:hidden;
-}
-.thumb{
-  width:130px;
-  height:220px;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow: 0 12px 36px rgba(2,6,23,0.06);
-  border: 1px solid rgba(0,0,0,0.03);
+  gap:28px;
+  align-items:flex-start;
   background:#fff;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 12px 40px rgba(2,6,23,0.06);
 }
-.thumb img{width:100%;height:100%;object-fit:cover;display:block}
-
-/* smaller thumbnails when viewport narrow (desktop-ish) */
-@media (min-width:1100px){
-  .thumb{width:140px;height:230px}
+.left-col{flex:1;min-width:260px}
+.right-col{flex:0 0 420px;display:flex;justify-content:center;align-items:center}
+.big-icon{
+  width:140px;height:140px;
+  border-radius:28px;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 12px;
 }
+.headline{font-size:22px;margin:6px 0;color:#07142a;text-align:center}
+.headline .accent{color:#ff8a00;font-weight:800}
+.sub{color:#6b7280;margin-bottom:10px;text-align:center}
 
-/* rest of page structure */
-.wrap-cards{display:flex;gap:14px;margin-top:18px}
-.feature-card{flex:1;background:linear-gradient(180deg,#fff,#f7fbff);padding:12px;border-radius:10px;border:1px solid #e8f0f6}
-
-/* mobile adjustments: force single column and center everything */
-@media (max-width:920px){
-  .play-hero .play-hero-wrap{flex-direction:column;align-items:center;padding:16px;gap:14px}
-  .play-col.left-col{order:0;width:100%;max-width:680px;align-items:center;text-align:center}
-  .play-col.right-col{order:1;width:100%;max-width:100%;padding:0}
-  .thumb-row{justify-content:center;gap:12px}
-  .thumb{width:68vw;height:42vh;border-radius:12px}
-  .play-headline{font-size:20px}
-  .install-green{min-width:unset;align-items:center}
-  .mini-icon{width:56px;height:56px}
-  .play-meta{justify-content:center}
-  .play-cta{width:86%;max-width:420px;text-align:center;padding:14px 18px;border-radius:12px}
-  .wrap{padding:12px}
-  html,body{overflow-x:hidden}
+.meta-row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+  color:#6b7280;
+  margin:12px 0;
 }
 
-/* very small phones */
-@media (max-width:420px){
-  .thumb{width:86vw;height:40vh}
-  .play-headline{font-size:18px}
-  .play-sub{font-size:14px}
-  .play-icon{width:84px;height:84px}
-  .play-cta{width:92%}
+/* CTA BUTTON (GREEN PLAY STORE STYLE) */
+.btn-cta{
+  display:block;
+  background:#11a44c;
+  color:#fff;
+  padding:16px 20px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:700;
+  text-decoration:none;
+  width:100%;
+  max-width:480px;
+  margin:20px auto 10px;
+  font-size:18px;
+  box-shadow:0 10px 30px rgba(17,164,76,0.20);
 }
 
-/* minor UI polish */
-.play-hero .play-hero-wrap:before{
-  content:"";
-  position:absolute;
-  pointer-events:none;
+/* TOP RIGHT “INSTALL RÁPIDA” BADGE */
+.install-green{
+  background:#11a44c;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:14px;
+  display:flex;
+  flex-direction:column;
+  font-weight:700;
+  font-size:16px;
+  box-shadow:0 8px 28px rgba(17,164,76,0.25);
+  text-align:center;
+  line-height:1.2;
+  width:auto;
+  max-width:180px;
+}
+.install-green small{
+  font-weight:500;
+  opacity:.9;
+  font-size:13px;
+}
+
+/* CARROSSEL */
+.screenshot-row{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  overflow-x:auto;
+  padding:12px 6px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+.screenshot{
+  flex:0 0 260px;
+  height:520px;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 18px 60px rgba(2,6,23,0.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  scroll-snap-align:center;
+}
+.screenshot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+/* MOBILE FIX */
+@media (max-width:880px){
+  .hero-store{
+    flex-direction:column;
+    align-items:center;
+    padding:18px;
+  }
+  .right-col{
+    order:3;
+    width:100%;
+    margin-top:10px;
+  }
+  .left-col{order:1;text-align:center;padding-top:8px}
+  .install-green{
+    order:2;
+    width:100%;
+    max-width:400px;
+    margin:10px auto 0;
+    border-radius:16px;
+    flex-direction:column;
+    font-size:17px;
+  }
+  .screenshot{
+    flex:0 0 70vw;
+    height:58vh;
+  }
+  .big-icon{width:120px;height:120px}
+  .headline{font-size:20px}
+}
+
+/* FOOTER */
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px;
+  color:#6b7280;
+  font-size:14px;
+  margin-top:28px;
 }
