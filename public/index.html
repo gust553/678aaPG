@@ -8,54 +8,64 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap top-inner">
-      <div class="left">
+  <!-- TOPBAR / HEADER (Play Store style) -->
+  <header class="topbar playstore-top">
+    <div class="wrap top-inner playstore-inner">
+      <div class="left play-left">
         <img src="/img/icon.png" class="mini-icon" alt="678aaPG">
         <div class="app-info">
           <div class="app-title">678aaPG</div>
           <div class="developer">678aaPG LTD CO. · Verificado pelo aplicativo</div>
         </div>
       </div>
-      <div class="right">
-        <a id="installBtnTop" class="btn-green" href="#" target="_blank">Instalação Rápida</a>
+
+      <div class="right play-right">
+        <div class="install-green">
+          <div class="install-title">⚡ Instalação Rápida</div>
+          <div class="install-sub">Baixe dentro de 15 segundos</div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="wrap main-area">
-    <section class="hero-store">
-      <div class="left-col">
-        <img src="/img/icon.png" class="big-icon" alt="678aaPG">
-        <h1 class="headline">Ganhe até <span class="accent">100% de bônus</span> no primeiro depósito</h1>
-        <p class="sub">Cadastre-se rápido, deposite e receba bônus exclusivos. A instalação é rápida e segura.</p>
-        <div class="meta-row">
-          <div class="rating">4,8 ★ <span class="muted">· 24K avaliações</span></div>
-          <div class="downloads muted">50 mil+ downloads</div>
-        </div>
-        <div class="install-area">
-          <a id="installBtn" class="btn-cta" href="#" target="_blank">Instalação Rápida — Baixe em 15s</a>
-        </div>
-      </div>
+  <!-- HERO (PlayStore-like) -->
+  <main>
+    <section class="hero-store play-hero">
+      <div class="wrap play-hero-wrap">
+        <div class="play-col left-col">
+          <img src="/img/icon.png" class="big-icon play-icon" alt="678aaPG">
+          <h1 class="headline play-headline">Ganhe até <span class="accent">100% de bônus</span> no primeiro depósito</h1>
+          <p class="sub play-sub">Cadastre-se rápido, deposite e receba bônus exclusivos. A instalação é rápida e segura.</p>
 
-      <div class="right-col">
-        <div class="screenshot-row" id="carousel" aria-hidden="false">
-          <div class="screenshot"><img src="/img/c1.jpg" alt="Screenshot 1"></div>
-          <div class="screenshot"><img src="/img/c2.jpg" alt="Screenshot 2"></div>
-          <div class="screenshot"><img src="/img/c3.jpg" alt="Screenshot 3"></div>
+          <div class="meta-row play-meta">
+            <div class="rating">4,8 ★ <span class="muted">· 24K avaliações</span></div>
+            <div class="downloads muted">50 mil+ downloads</div>
+          </div>
+
+          <a id="installBtn" class="btn-cta play-cta" href="#" target="_blank">Instalação Rápida — Baixe em 15s</a>
+        </div>
+
+        <div class="play-col right-col">
+          <div class="thumb-row">
+            <div class="thumb"><img src="/img/c1.jpg" alt="promo 1"></div>
+            <div class="thumb"><img src="/img/c2.jpg" alt="promo 2"></div>
+            <div class="thumb"><img src="/img/c3.jpg" alt="promo 3"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="store-features">
+    <!-- FEATURES -->
+    <section class="store-features wrap">
       <div class="wrap-cards">
-        <div class="card feature-card"><strong>Bônus Imediato</strong><p>Receba bônus no depósito inicial. Sujeito a termos.</p></div>
-        <div class="card feature-card"><strong>Suporte 24/7</strong><p>Atendimento via WhatsApp e chat para qualquer dúvida.</p></div>
-        <div class="card feature-card"><strong>Pagamentos Seguros</strong><p>Transações com criptografia SSL e métodos confiáveis.</p></div>
+        <div class="feature-card"><strong>Bônus Imediato</strong><p>Bônus no depósito inicial (sujeito a termos).</p></div>
+        <div class="feature-card"><strong>Suporte 24/7</strong><p>Atendimento via WhatsApp e chat para qualquer dúvida.</p></div>
+        <div class="feature-card"><strong>Transações Seguras</strong><p>Pagamentos com criptografia SSL.</p></div>
       </div>
     </section>
 
-    <section class="about">
+    <!-- ABOUT -->
+    <section class="about wrap">
       <h2>Sobre o app</h2>
       <p>678aaPG é uma plataforma de jogos com ofertas exclusivas para novos jogadores. Oferecemos diversos bônus de boas-vindas e promoções diárias para maximizar suas chances de ganhos.</p>
 
@@ -73,13 +83,15 @@
       </ul>
     </section>
 
-    <section class="faq">
+    <!-- FAQ -->
+    <section class="faq wrap">
       <h2>Perguntas frequentes</h2>
       <div class="qa"><strong>É seguro usar o app?</strong><p>Sim. Usamos protocolos padrão de segurança.</p></div>
       <div class="qa"><strong>Como recebo o bônus?</strong><p>Faça o primeiro depósito e o bônus será creditado conforme a promoção.</p></div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="wrap footer">
     <div class="left">© <span id="year"></span> 678aaPG — Jogue com responsabilidade.</div>
     <div class="right small-links">Política de Privacidade · Termos · Compartilhar</div>
