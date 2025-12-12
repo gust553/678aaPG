@@ -1,98 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>678aaPG — Instalação Rápida</title>
-  <meta name="description" content="678aaPG — Instalação rápida, bônus e promoções. Baixe e ganhe bônus no primeiro depósito.">
-  <link rel="stylesheet" href="/css/style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>678aaPG</title>
+<link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <!-- TOPBAR / HEADER -->
-  <header class="topbar">
-    <div class="wrap top-inner">
-      <div class="left">
-        <img src="/img/icon.png" class="mini-icon" alt="678aaPG">
-        <div>
-          <div class="app-title">678aaPG</div>
-          <div class="developer">678aaPG LTD CO. · Verificado pelo aplicativo</div>
-        </div>
-      </div>
 
-      <div class="right">
-        <div class="install-green" role="button" aria-label="Instalação rápida">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-weight:900;font-size:18px;line-height:1;">⚡</span>
-            <div style="text-align:left">
-              <div style="font-weight:800;">Instalação Rápida</div>
-              <small style="display:block;margin-top:3px;font-weight:500;">Baixe dentro de 15 segundos</small>
-            </div>
-          </div>
-        </div>
+<body>
+
+<!-- TOPO -->
+<div class="topbar">
+  <div class="wrap top-inner">
+
+    <div class="left">
+      <img src="icon.png" class="mini-icon" />
+      <div>
+        <div class="app-title">678aaPG</div>
+        <div class="developer">678aaPG LTD CO. · Verificado pelo aplicativo</div>
       </div>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero-store">
-      <div class="wrap main-area">
-        <div class="left-col">
-          <img src="/img/icon.png" class="big-icon" alt="678aaPG">
-          <h1 class="headline">Ganhe até <span class="accent">100% de bônus</span> no primeiro depósito</h1>
-          <p class="sub">Cadastre-se rápido, deposite e receba bônus exclusivos. A instalação é rápida e segura.</p>
+    <!-- BOTÃO SUPERIOR (AGORA CURTO) -->
+    <div class="fast-btn">
+      <a href="https://www.5951bet.com/?id=9049285" class="fast-install">
+        <span class="icon">⚡</span> Instalar
+      </a>
+    </div>
 
-          <div class="meta-row">
-            <div>4,8 ★ · 24K avaliações</div>
-            <div>50 mil+ downloads</div>
-          </div>
+  </div>
+</div>
 
-          <!-- CTA principal -->
-          <a id="installBtn" class="btn-cta" href="#" onclick="location.href='/#install';return false;">Instalação Rápida — Baixe em 15s</a>
-        </div>
 
-        <div class="right-col">
-          <div class="screenshot-row" aria-hidden="false">
-            <div class="screenshot"><img src="/img/c1.jpg" alt="promo 1"></div>
-            <div class="screenshot"><img src="/img/c2.jpg" alt="promo 2"></div>
-            <div class="screenshot"><img src="/img/c3.jpg" alt="promo 3"></div>
-          </div>
-        </div>
+<!-- ÁREA PRINCIPAL -->
+<div class="main-area wrap">
+
+  <div class="hero-store">
+
+    <div class="left-col">
+      <img src="icon.png" class="big-icon" />
+
+      <h1 class="headline">
+        Ganhe até <span class="accent">100% de bônus</span> no primeiro depósito
+      </h1>
+
+      <p class="sub">
+        Cadastre-se rápido, deposite e receba bônus exclusivos.  
+        A instalação é rápida e segura.
+      </p>
+
+      <div class="meta-row">
+        <span>4,8 ★</span>
+        <span>· 24K avaliações</span>
+        <span>· 50 mil+ downloads</span>
       </div>
-    </section>
 
-    <!-- FEATURES -->
-    <section class="wrap wrap-cards" style="margin-top:18px;">
-      <div class="feature-card">
-        <strong>Bônus Imediato</strong>
-        <p>Bônus no depósito inicial (sujeito a termos).</p>
+      <!-- BOTÃO PRINCIPAL (ABRE SEU LINK) -->
+      <a href="https://www.5951bet.com/?id=9049285" class="cta-main">
+        Instalação Rápida — Baixe em 15s
+      </a>
+    </div>
+
+    <div class="right-col">
+      <!-- CARROSSEL -->
+      <div class="screenshot-row">
+        <div class="screenshot"><img src="c1.jpg" /></div>
+        <div class="screenshot"><img src="c2.jpg" /></div>
+        <div class="screenshot"><img src="c3.jpg" /></div>
       </div>
-      <div class="feature-card">
-        <strong>Suporte 24/7</strong>
-        <p>Atendimento via WhatsApp e chat.</p>
-      </div>
-      <div class="feature-card">
-        <strong>Transações Seguras</strong>
-        <p>Pagamentos com criptografia SSL.</p>
-      </div>
-    </section>
+    </div>
 
-    <!-- ABOUT & FAQ (opcional) -->
-    <section class="wrap about" style="margin-top:18px;background:#fff;padding:16px;border-radius:10px;border:1px solid #eef6fb;">
-      <h2>Sobre o app</h2>
-      <p>678aaPG é uma plataforma de jogos com ofertas exclusivas para novos jogadores.</p>
-    </section>
-  </main>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="wrap footer">
-    <div>© <span id="year"></span> 678aaPG — Jogue com responsabilidade.</div>
-    <div class="right small-links">Política de Privacidade · Termos</div>
-  </footer>
+</div>
 
-  <script>
-    // coloca o ano no footer
-    document.addEventListener('DOMContentLoaded', function(){ const y = new Date().getFullYear(); document.getElementById('year').textContent = y; });
-  </script>
 </body>
 </html>
