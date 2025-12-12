@@ -1,255 +1,63 @@
-/* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* START: PlayStore-like theme for 678aaPG */
+
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7fbff; --card:#ffffff; --accent:#ff8a00; --green:#0db05a; --muted:#6b7280; --text:#07142a;
+}
+body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:18px}
+
+/* TOPBAR - playstore style */
+.topbar.playstore-top{background:#fff;border-bottom:1px solid #eef3f6;position:sticky;top:0;z-index:40}
+.play-inner, .playstore-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.play-left{display:flex;align-items:center;gap:12px}
+.mini-icon{width:56px;height:56px;border-radius:12px;object-fit:cover;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+.app-title{font-weight:800;font-size:18px}
+.developer{color:var(--muted);font-size:13px}
+
+/* green install bar (compact on top) */
+.install-green{background:var(--green);color:#fff;padding:10px 14px;border-radius:10px;display:flex;flex-direction:column;align-items:flex-end;min-width:200px}
+.install-green .install-title{font-weight:800}
+.install-green .install-sub{font-size:12px;opacity:.95}
+
+/* HERO - playstore layout */
+.play-hero .play-hero-wrap{display:flex;gap:20px;align-items:flex-start;background:#fff;padding:18px;border-radius:14px;margin-top:14px;box-shadow:0 12px 40px rgba(2,6,23,0.06)}
+.play-col.left-col{flex:0 0 320px;min-width:220px}
+.play-col.right-col{flex:1;display:flex;align-items:center;justify-content:center;padding-left:10px}
+
+/* left column inside hero */
+.play-icon{width:84px;height:84px;border-radius:18px;display:block;margin-bottom:10px}
+.play-headline{font-size:18px;margin:6px 0 8px}
+.play-sub{color:var(--muted);margin-bottom:12px}
+.play-meta{display:flex;gap:10px;color:var(--muted);margin-bottom:12px}
+.play-cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 8px 30px rgba(255,138,0,0.12)}
+
+/* thumbnails row (three smaller cards like Play Store) */
+.thumb-row{display:flex;gap:12px;align-items:center;justify-content:flex-start;overflow:hidden}
+.thumb{width:120px;height:200px;border-radius:12px;background:#fff;box-shadow:0 10px 30px rgba(2,6,23,0.08);overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
+
+/* rest of page */
+.wrap-cards{display:flex;gap:14px;margin-top:18px}
+.feature-card{flex:1;background:linear-gradient(180deg,#fff,#f7fbff);padding:12px;border-radius:10px;border:1px solid #e8f0f6}
+
+/* responsive behaviour - force PlayStore mobile layout */
+@media (max-width:900px){
+  .play-hero .play-hero-wrap{flex-direction:column;align-items:center;padding:16px}
+  .play-col.left-col{order:0;width:100%;text-align:center;padding-bottom:6px}
+  .play-col.right-col{order:1;width:100%;padding-top:8px}
+  .thumb-row{justify-content:center}
+  .thumb{width:68vw;height:44vh;border-radius:12px}
+  .play-headline{font-size:20px}
+  .install-green{align-items:center}
+  .play-meta{justify-content:center}
+  .top-inner{padding:8px}
+}
+/* small devices */
+@media (max-width:420px){
+  .thumb{width:86vw;height:44vh}
+  .play-headline{font-size:18px}
 }
 
-/* VARIABLES */
-:root {
-  --bg: #f7fbff;
-  --card: #ffffff;
-  --accent: #ff8a00;
-  --green: #12a454;
-  --muted: #6b7280;
-  --text: #07142a;
-}
-
-/* BASE */
-html, body {
-  height: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  font-family: Inter, system-ui, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-}
-
-.wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 18px;
-}
-
-/* TOPBAR */
-.topbar {
-  background: #fff;
-  border-bottom: 1px solid #e6eef3;
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  width: 100%;
-}
-
-.top-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.mini-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
-}
-
-.app-title {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.developer {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* LAYOUT PRINCIPAL */
-.main-area {
-  padding: 18px;
-}
-
-.hero-store {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(2, 6, 23, 0.06);
-}
-
-/* Left: texto and CTA */
-.left-col {
-  flex: 1 1 320px;
-  min-width: 200px;
-}
-
-/* Right: screenshots */
-.right-col {
-  flex: 0 0 420px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 420px;
-}
-
-.big-icon {
-  width: 120px;
-  height: 120px;
-  border-radius: 20px;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.headline {
-  font-size: 20px;
-  margin: 6px 0 6px;
-  color: var(--text);
-}
-
-.headline .accent {
-  color: var(--accent);
-  font-weight: 800;
-}
-
-.sub {
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-
-.meta-row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  color: var(--muted);
-  margin: 12px 0;
-}
-
-/* CTA */
-.btn-cta {
-  display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(255, 138, 0, 0.12);
-}
-
-/* CARDS */
-.wrap-cards {
-  display: flex;
-  gap: 12px;
-  margin-top: 14px;
-  align-items: stretch;
-}
-.feature-card {
-  flex: 1;
-  background: linear-gradient(180deg, #fff, #f7fbff);
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #e8f0f6;
-}
-.feature-card strong { display:block;color:var(--accent);font-weight:800;margin-bottom:6px;}
-
-/* ABOUT / FAQ */
-.about { margin-top: 14px; background:#fff;padding:14px;border-radius:10px;border:1px solid #e8f0f6 }
-.specs { display:flex; gap:10px; margin:10px 0; }
-.specs div{ flex:1; background:#fbfdff;padding:8px;border-radius:8px; text-align:center }
-
-/* FOOTER */
-.footer { display:flex; justify-content:space-between; align-items:center; padding:14px; color:var(--muted); font-size:14px; margin-top:18px }
-
-/* ---------- CAROUSEL / SCREENSHOTS ------------- */
-/* Container with horizontal snapping */
-.screenshot-row {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  overflow-x: auto;
-  padding: 8px 6px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-/* Card size default for desktop */
-.screenshot {
-  flex: 0 0 260px;
-  height: 480px;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 18px 60px rgba(2, 6, 23, 0.10);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  scroll-snap-align: center;
-  overflow: hidden;
-}
-
-.screenshot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* ---------- STRONG MOBILE OVERRIDES ---------- */
-/* This block forces single-column layout and sane sizes on small devices */
-@media (max-width: 900px) {
-
-  /* stack columns vertically and center everything */
-  .hero-store {
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 14px !important;
-  }
-
-  /* ensure the left content appears first on small screens */
-  .left-col { order: 0 !important; width: 100% !important; max-width: 720px; padding: 6px 8px; text-align:center; }
-  .right-col { order: 1 !important; width: 100% !important; max-width: 100%; margin-top: 10px; }
-
-  /* make screenshots almost full-width but keep a margin */
-  .screenshot { flex: 0 0 88vw !important; height: 56vh !important; border-radius: 12px !important; }
-  .screenshot img { object-fit: cover; width:100%; height:100%; }
-
-  /* adjust top icon/title sizes */
-  .big-icon { width: 96px !important; height: 96px !important; margin: 0 auto 10px; }
-  .headline { font-size: 18px !important; margin-top: 8px; }
-  .meta-row { justify-content: center; }
-
-  /* reduce paddings and center CTA */
-  .btn-cta { display:inline-block; margin: 12px auto; padding: 12px 18px; }
-
-  /* stack features */
-  .wrap-cards { flex-direction: column; gap: 10px; }
-
-  /* prevent horizontal overflow on small browsers */
-  html, body { overflow-x: hidden; min-width: 0; }
-
-  /* reduce topbar space */
-  .top-inner { padding: 8px 12px; }
-}
-
-/* Extra tiny-device tweak to avoid image overflow on very small viewports */
-@media (max-width: 420px) {
-  .screenshot { flex: 0 0 94vw !important; height: 54vh !important; }
-  .headline { font-size: 17px; }
-  .big-icon { width: 84px; height: 84px; }
-}
-
-/* Accessibility / small niceties */
-.screenshot-row::-webkit-scrollbar { height: 8px; }
-.screenshot-row::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 8px; }
+/* end */
