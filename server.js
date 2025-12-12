@@ -1,18 +1,19 @@
 const express = require("express");
 const path = require("path");
-
 const app = express();
+
+// Render exige usar a porta que vem do ambiente
 const PORT = process.env.PORT || 3000;
 
-// Servir arquivos estáticos da pasta public
+// Servir a pasta /public
 app.use(express.static(path.join(__dirname, "public")));
 
-// Página principal
+// Rota principal -> index.html
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Iniciar servidor
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
