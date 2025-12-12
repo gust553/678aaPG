@@ -1,7 +1,6 @@
 {
   "name": "678aapg-landing",
   "version": "1.0.0",
-  "description": "Landing page afiliada 678aaPG",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
