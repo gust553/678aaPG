@@ -1,63 +1,191 @@
-/* START: PlayStore-like theme for 678aaPG */
+/* ===========================
+   Play Store look — final
+   Substitua todo o public/css/style.css
+   =========================== */
 
-/* reset */
+/* Reset / base */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f7fbff; --card:#ffffff; --accent:#ff8a00; --green:#0db05a; --muted:#6b7280; --text:#07142a;
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --accent:#ff8a00; /* kept for accents */
+  --green:#1ea962;  /* primary Play-store green */
+  --green-dark:#15894b;
+  --muted:#6b7280;
+  --text:#07142a;
+  --soft-shadow: 0 10px 30px rgba(2,6,23,0.08);
 }
-body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-.wrap{max-width:1100px;margin:0 auto;padding:18px}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
+}
 
-/* TOPBAR - playstore style */
-.topbar.playstore-top{background:#fff;border-bottom:1px solid #eef3f6;position:sticky;top:0;z-index:40}
-.play-inner, .playstore-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+/* container */
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+
+/* TOPBAR / HEADER */
+.topbar.playstore-top{
+  background:#fff;
+  border-bottom:1px solid #eef3f6;
+  position:sticky;
+  top:0;
+  z-index:60;
+  width:100%;
+}
+.playstore-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 16px;
+}
+
+/* Left (icon + title) */
 .play-left{display:flex;align-items:center;gap:12px}
-.mini-icon{width:56px;height:56px;border-radius:12px;object-fit:cover;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
-.app-title{font-weight:800;font-size:18px}
+.mini-icon{
+  width:60px;height:60px;border-radius:14px;object-fit:cover;box-shadow:0 8px 24px rgba(2,6,23,0.06);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.app-title{font-weight:800;font-size:18px;line-height:1}
 .developer{color:var(--muted);font-size:13px}
 
-/* green install bar (compact on top) */
-.install-green{background:var(--green);color:#fff;padding:10px 14px;border-radius:10px;display:flex;flex-direction:column;align-items:flex-end;min-width:200px}
-.install-green .install-title{font-weight:800}
-.install-green .install-sub{font-size:12px;opacity:.95}
+/* RIGHT: large green install pill (top) */
+.install-green{
+  background:linear-gradient(180deg,var(--green),var(--green-dark));
+  color:#fff;
+  padding:10px 18px;
+  border-radius:999px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:center;
+  min-width:240px;
+  box-shadow: 0 8px 30px rgba(29,169,98,0.12);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.install-green .install-title{font-weight:800;font-size:15px}
+.install-green .install-sub{font-size:12px;opacity:.95;margin-top:3px}
 
-/* HERO - playstore layout */
-.play-hero .play-hero-wrap{display:flex;gap:20px;align-items:flex-start;background:#fff;padding:18px;border-radius:14px;margin-top:14px;box-shadow:0 12px 40px rgba(2,6,23,0.06)}
-.play-col.left-col{flex:0 0 320px;min-width:220px}
-.play-col.right-col{flex:1;display:flex;align-items:center;justify-content:center;padding-left:10px}
+/* HERO (main card under topbar) */
+.play-hero .play-hero-wrap{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  background:var(--card);
+  padding:18px;
+  border-radius:14px;
+  margin-top:14px;
+  box-shadow:var(--soft-shadow);
+  border: 1px solid rgba(10,20,30,0.02);
+}
 
-/* left column inside hero */
-.play-icon{width:84px;height:84px;border-radius:18px;display:block;margin-bottom:10px}
-.play-headline{font-size:18px;margin:6px 0 8px}
-.play-sub{color:var(--muted);margin-bottom:12px}
-.play-meta{display:flex;gap:10px;color:var(--muted);margin-bottom:12px}
-.play-cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 8px 30px rgba(255,138,0,0.12)}
+/* left column (info + CTA) */
+.play-col.left-col{
+  flex:0 0 360px;
+  min-width:220px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:12px;
+}
 
-/* thumbnails row (three smaller cards like Play Store) */
-.thumb-row{display:flex;gap:12px;align-items:center;justify-content:flex-start;overflow:hidden}
-.thumb{width:120px;height:200px;border-radius:12px;background:#fff;box-shadow:0 10px 30px rgba(2,6,23,0.08);overflow:hidden}
-.thumb img{width:100%;height:100%;object-fit:cover}
+.play-icon{
+  width:96px;height:96px;border-radius:18px;object-fit:cover;border:1px solid rgba(0,0,0,0.03);
+  box-shadow:0 8px 30px rgba(2,6,23,0.06);
+}
 
-/* rest of page */
+.play-headline{
+  font-size:20px;
+  font-weight:800;
+  line-height:1.05;
+  color:var(--text);
+  margin-top:4px;
+}
+
+/* subtitle */
+.play-sub{color:var(--muted);margin-top:6px;font-size:15px;line-height:1.4}
+
+/* meta row: stars, reviews */
+.play-meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:14px;margin-top:8px}
+
+/* CTA BUTTON (changed to green) */
+.play-cta{
+  display:inline-block;
+  background:linear-gradient(180deg,var(--green),var(--green-dark));
+  color:#fff;
+  padding:14px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow: 0 14px 40px rgba(29,169,98,0.12);
+  border: 1px solid rgba(0,0,0,0.04);
+  margin-top:10px;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.play-cta:active{transform:translateY(1px)}
+.play-cta:hover{box-shadow: 0 18px 50px rgba(29,169,98,0.16)}
+
+/* right column: thumbnails/carousel */
+.play-col.right-col{flex:1;display:flex;align-items:center;justify-content:flex-end;padding-left:6px}
+.thumb-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+.thumb{
+  width:130px;
+  height:220px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: 0 12px 36px rgba(2,6,23,0.06);
+  border: 1px solid rgba(0,0,0,0.03);
+  background:#fff;
+}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* smaller thumbnails when viewport narrow (desktop-ish) */
+@media (min-width:1100px){
+  .thumb{width:140px;height:230px}
+}
+
+/* rest of page structure */
 .wrap-cards{display:flex;gap:14px;margin-top:18px}
 .feature-card{flex:1;background:linear-gradient(180deg,#fff,#f7fbff);padding:12px;border-radius:10px;border:1px solid #e8f0f6}
 
-/* responsive behaviour - force PlayStore mobile layout */
-@media (max-width:900px){
-  .play-hero .play-hero-wrap{flex-direction:column;align-items:center;padding:16px}
-  .play-col.left-col{order:0;width:100%;text-align:center;padding-bottom:6px}
-  .play-col.right-col{order:1;width:100%;padding-top:8px}
-  .thumb-row{justify-content:center}
-  .thumb{width:68vw;height:44vh;border-radius:12px}
+/* mobile adjustments: force single column and center everything */
+@media (max-width:920px){
+  .play-hero .play-hero-wrap{flex-direction:column;align-items:center;padding:16px;gap:14px}
+  .play-col.left-col{order:0;width:100%;max-width:680px;align-items:center;text-align:center}
+  .play-col.right-col{order:1;width:100%;max-width:100%;padding:0}
+  .thumb-row{justify-content:center;gap:12px}
+  .thumb{width:68vw;height:42vh;border-radius:12px}
   .play-headline{font-size:20px}
-  .install-green{align-items:center}
+  .install-green{min-width:unset;align-items:center}
+  .mini-icon{width:56px;height:56px}
   .play-meta{justify-content:center}
-  .top-inner{padding:8px}
-}
-/* small devices */
-@media (max-width:420px){
-  .thumb{width:86vw;height:44vh}
-  .play-headline{font-size:18px}
+  .play-cta{width:86%;max-width:420px;text-align:center;padding:14px 18px;border-radius:12px}
+  .wrap{padding:12px}
+  html,body{overflow-x:hidden}
 }
 
-/* end */
+/* very small phones */
+@media (max-width:420px){
+  .thumb{width:86vw;height:40vh}
+  .play-headline{font-size:18px}
+  .play-sub{font-size:14px}
+  .play-icon{width:84px;height:84px}
+  .play-cta{width:92%}
+}
+
+/* minor UI polish */
+.play-hero .play-hero-wrap:before{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+}
