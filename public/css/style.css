@@ -1,102 +1,161 @@
 /* RESET */
 *{box-sizing:border-box;margin:0;padding:0}
+
+/* CORES */
+:root{
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --accent:#ff8a00;
+  --green:#1ba548;
+  --muted:#6b7280;
+  --text:#07142a;
+}
+
+/* BASE */
 body{
   font-family:Inter, system-ui, Arial, sans-serif;
-  background:#f7fbff;
-  color:#07142a;
+  background:var(--bg);
+  color:var(--text);
   -webkit-font-smoothing:antialiased;
 }
 
-/* WRAPPER */
-.wrap{max-width:1100px;margin:0 auto;padding:18px}
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:18px;
+}
 
-/* TOPBAR */
+/* TOPO */
 .topbar{
   background:#fff;
   border-bottom:1px solid #e6eef3;
   position:sticky;
   top:0;
-  z-index:60;
+  z-index:50;
 }
+
 .top-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:10px 18px;
 }
-.left{display:flex;align-items:center;gap:12px}
-.mini-icon{
-  width:56px;height:56px;border-radius:12px;object-fit:cover;box-shadow:0 8px 24px rgba(2,6,23,0.06);
-}
-.app-title{font-weight:800;font-size:18px}
-.developer{color:#6b7280;font-size:13px}
 
-/* INSTALL PILL (top-right) */
-.install-green{
-  background:linear-gradient(180deg,#21b674,#179454);
-  color:#fff;
-  padding:8px 14px;
-  border-radius:999px;
+.left{display:flex;align-items:center;gap:12px}
+
+.mini-icon{
+  width:56px;height:56px;border-radius:12px;
+  object-fit:cover;
+  box-shadow:0 8px 24px rgba(2,6,23,0.06);
+}
+
+.app-title{font-weight:700;font-size:18px}
+.developer{color:var(--muted);font-size:13px}
+
+/* BOTÃO SUPERIOR */
+.fast-install{
   display:flex;
   align-items:center;
-  gap:10px;
-  box-shadow:0 8px 28px rgba(23,148,84,0.18);
-  border:1px solid rgba(0,0,0,0.04);
-  font-weight:800;
-  font-size:15px;
-}
-
-/* HERO */
-.main-area{padding:18px 6px}
-.hero-store{
-  background:#fff;padding:20px;border-radius:14px;box-shadow:0 12px 40px rgba(2,6,23,0.06);margin-top:12px;
-}
-.hero-store .wrap{display:flex;gap:20px;align-items:flex-start}
-.left-col{flex:0 0 360px;min-width:220px;text-align:center}
-.right-col{flex:1;display:flex;align-items:center;justify-content:center;padding-left:6px}
-.big-icon{width:96px;height:96px;border-radius:18px;object-fit:cover;display:block;margin:6px auto}
-.headline{font-size:20px;font-weight:800;margin:6px 0;color:#07142a}
-.headline .accent{color:#ff8a00}
-.sub{color:#6b7280;margin-bottom:12px;font-size:15px}
-
-/* meta + CTA */
-.meta-row{display:flex;gap:12px;justify-content:center;color:#6b7280;margin-bottom:10px}
-.btn-cta{
-  display:inline-block;
-  background:linear-gradient(180deg,#21b674,#179454);
+  gap:6px;
+  background:var(--green);
   color:#fff;
-  padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:900;
-  font-size:17px;box-shadow:0 12px 36px rgba(23,148,84,0.14);border:1px solid rgba(0,0,0,0.04);
-  margin-top:6px;
+  padding:10px 18px;
+  border-radius:14px;
+  font-weight:700;
+  font-size:15px;
+  white-space:nowrap;
+  box-shadow:0 6px 20px rgba(0,150,70,0.25);
+  text-decoration:none;
+}
+
+.icon{font-size:16px}
+
+/* ÁREA PRINCIPAL */
+.main-area{padding:28px 18px}
+
+.hero-store{
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  background:#fff;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 12px 40px rgba(2,6,23,0.06);
+}
+
+.left-col{flex:1;min-width:260px}
+.right-col{flex:0 0 420px;display:flex;justify-content:center;align-items:center}
+
+.big-icon{
+  width:140px;height:140px;border-radius:28px;
+  object-fit:cover;display:block;margin-bottom:12px;
+}
+
+.headline{font-size:22px;margin:6px 0;color:var(--text)}
+.headline .accent{color:var(--accent);font-weight:800}
+
+.sub{color:var(--muted);margin-bottom:10px}
+
+.meta-row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  color:var(--muted);
+  margin:12px 0;
+}
+
+/* BOTÃO PRINCIPAL */
+.cta-main{
+  display:block;
+  background:var(--green);
+  color:#fff;
+  padding:16px;
+  text-align:center;
+  font-size:18px;
+  font-weight:700;
+  border-radius:12px;
+  margin-top:14px;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,150,70,0.25);
 }
 
 /* CARROSSEL */
-.screenshot-row{display:flex;gap:12px;align-items:center;overflow-x:auto;padding:12px 6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-.screenshot{flex:0 0 140px;height:240px;border-radius:12px;background:#fff;box-shadow:0 10px 30px rgba(2,6,23,0.06);overflow:hidden}
-.screenshot img{width:100%;height:100%;object-fit:cover}
-
-/* FEATURE CARDS */
-.wrap-cards{display:flex;gap:14px;margin-top:18px}
-.feature-card{flex:1;background:linear-gradient(180deg,#fff,#f7fbff);padding:12px;border-radius:10px;border:1px solid #e8f0f6}
-
-/* ABOUT */
-.about{margin-top:18px;background:#fff;padding:16px;border-radius:10px;border:1px solid #eef6fb}
-
-/* FOOTER */
-.footer{display:flex;justify-content:space-between;align-items:center;padding:18px;color:#6b7280;font-size:14px;margin-top:20px}
-
-/* RESPONSIVE */
-@media (max-width:920px){
-  .hero-store .wrap{flex-direction:column;align-items:center;padding:12px}
-  .left-col{order:0;width:100%;text-align:center}
-  .right-col{order:1;width:100%;padding-top:8px}
-  .screenshot{flex:0 0 68vw;height:44vh;border-radius:12px}
-  .big-icon{width:84px;height:84px}
-  .btn-cta{width:86%;max-width:420px;text-align:center}
-  .install-green{max-width:unset}
+.screenshot-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  overflow-x:auto;
+  padding:8px 6px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
 }
 
-@media (max-width:420px){
-  .screenshot{width:86vw;height:40vh}
-  .headline{font-size:18px}
+.screenshot{
+  flex:0 0 240px;
+  height:480px;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 18px 60px rgba(2,6,23,0.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  scroll-snap-align:center;
+  overflow:hidden;
+}
+
+.screenshot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+/* MOBILE */
+@media (max-width:880px){
+  .hero-store{flex-direction:column;align-items:center;padding:16px}
+  .right-col{order:2;width:100%;margin-top:10px}
+  .left-col{order:1;text-align:center;padding-top:8px}
+  .screenshot{flex:0 0 68vw;height:56vh;border-radius:14px}
+  .big-icon{width:110px;height:110px}
+  .headline{font-size:20px;margin-top:8px}
+  .meta-row{justify-content:center}
 }
