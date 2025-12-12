@@ -1,78 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>678aaPG</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>678aaPG — Instalação Rápida</title>
+  <!-- caminho CORRETO para o CSS -->
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-
-<!-- TOPO -->
-<div class="topbar">
-  <div class="wrap top-inner">
-
-    <div class="left">
-      <img src="icon.png" class="mini-icon" />
-      <div>
-        <div class="app-title">678aaPG</div>
-        <div class="developer">678aaPG LTD CO. · Verificado pelo aplicativo</div>
-      </div>
-    </div>
-
-    <!-- BOTÃO SUPERIOR (AGORA CURTO) -->
-    <div class="fast-btn">
-      <a href="https://www.5951bet.com/?id=9049285" class="fast-install">
-        <span class="icon">⚡</span> Instalar
-      </a>
-    </div>
-
-  </div>
-</div>
-
-
-<!-- ÁREA PRINCIPAL -->
-<div class="main-area wrap">
-
-  <div class="hero-store">
-
-    <div class="left-col">
-      <img src="icon.png" class="big-icon" />
-
-      <h1 class="headline">
-        Ganhe até <span class="accent">100% de bônus</span> no primeiro depósito
-      </h1>
-
-      <p class="sub">
-        Cadastre-se rápido, deposite e receba bônus exclusivos.  
-        A instalação é rápida e segura.
-      </p>
-
-      <div class="meta-row">
-        <span>4,8 ★</span>
-        <span>· 24K avaliações</span>
-        <span>· 50 mil+ downloads</span>
+  <header class="topbar">
+    <div class="wrap top-inner">
+      <div class="left">
+        <!-- caminho CORRETO para o ícone -->
+        <img src="/img/icon.png" class="mini-icon" alt="678aaPG">
+        <div>
+          <div class="app-title">678aaPG</div>
+          <div class="developer">678aaPG LTD CO. · Verificado pelo aplicativo</div>
+        </div>
       </div>
 
-      <!-- BOTÃO PRINCIPAL (ABRE SEU LINK) -->
-      <a href="https://www.5951bet.com/?id=9049285" class="cta-main">
-        Instalação Rápida — Baixe em 15s
-      </a>
-    </div>
-
-    <div class="right-col">
-      <!-- CARROSSEL -->
-      <div class="screenshot-row">
-        <div class="screenshot"><img src="c1.jpg" /></div>
-        <div class="screenshot"><img src="c2.jpg" /></div>
-        <div class="screenshot"><img src="c3.jpg" /></div>
+      <div class="right">
+        <a href="https://www.5951bet.com/?id=9049285" class="fast-install" aria-label="Instalar">
+          <span class="icon">⚡</span> Instalar
+        </a>
       </div>
     </div>
+  </header>
 
-  </div>
+  <main>
+    <section class="hero-store">
+      <div class="wrap main-area">
+        <div class="left-col">
+          <img src="/img/icon.png" class="big-icon" alt="678aaPG">
+          <h1 class="headline">Ganhe até <span class="accent">100% de bônus</span> no primeiro depósito</h1>
+          <p class="sub">Cadastre-se rápido, deposite e receba bônus exclusivos. A instalação é rápida e segura.</p>
 
-</div>
+          <div class="meta-row">
+            <div>4,8 ★ · 24K avaliações</div>
+            <div>50 mil+ downloads</div>
+          </div>
 
+          <a class="cta-main" href="https://www.5951bet.com/?id=9049285">Instalação Rápida — Baixe em 15s</a>
+        </div>
+
+        <div class="right-col">
+          <div class="screenshot-row">
+            <div class="screenshot"><img src="/img/c1.jpg" alt="promo 1"></div>
+            <div class="screenshot"><img src="/img/c2.jpg" alt="promo 2"></div>
+            <div class="screenshot"><img src="/img/c3.jpg" alt="promo 3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <div>© <span id="year"></span> 678aaPG — Jogue com responsabilidade.</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
