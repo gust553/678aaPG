@@ -1,0 +1,40 @@
+/* bt8-like landing CSS */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f2f7fb;--card:#ffffff;--green:#1fa85a;--muted:#6b7280;--text:#0b2130}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:18px}
+.topbar{background:var(--card);border-bottom:1px solid #e9f0f5;position:sticky;top:0;z-index:50}
+.top-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 18px}
+.left{display:flex;align-items:center;gap:12px}
+.mini-icon{width:56px;height:56px;border-radius:12px;object-fit:cover;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+.app-title{font-weight:800;font-size:18px}
+.developer{color:var(--muted);font-size:13px}
+.badge{background:linear-gradient(180deg,var(--green),#158a43);color:#fff;padding:10px 14px;border-radius:28px;text-decoration:none;font-weight:800;display:flex;gap:8px;align-items:center;box-shadow:0 8px 30px rgba(25,139,74,0.18)}
+.badge span{font-size:15px}
+
+/* hero */
+.hero{padding:22px 0}
+.hero-inner{display:flex;gap:28px;align-items:flex-start;background:var(--card);padding:22px;border-radius:14px;box-shadow:0 12px 40px rgba(2,6,23,0.06)}
+.hero-left{flex:1;min-width:260px;text-align:center}
+.big-icon{width:120px;height:120px;border-radius:20px;object-fit:cover;margin:0 auto 12px;display:block}
+.headline{font-size:22px;font-weight:800;margin:6px 0}
+.accent{color:#ff8a00}
+.sub{color:var(--muted);margin:10px 0}
+.rating{color:var(--muted);margin-top:8px}
+.cta{display:inline-block;background:var(--green);color:#fff;padding:16px 20px;border-radius:12px;text-decoration:none;font-weight:800;margin-top:14px;box-shadow:0 12px 36px rgba(25,139,74,0.14)}
+
+/* carousel */
+.hero-right{flex:0 0 420px;display:flex;justify-content:center;align-items:center}
+.carousel{display:flex;gap:12px;align-items:center;overflow-x:auto;padding:12px 6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.slide{flex:0 0 200px;height:360px;border-radius:16px;overflow:hidden;box-shadow:0 18px 60px rgba(2,6,23,0.12);scroll-snap-align:center;background:#fff;display:flex;align-items:center;justify-content:center}
+.slide img{width:100%;height:100%;object-fit:cover}
+
+/* responsive */
+@media(max-width:880px){
+  .hero-inner{flex-direction:column;align-items:center}
+  .hero-right{order:2;width:100%;margin-top:12px}
+  .hero-left{order:1}
+  .carousel .slide{flex:0 0 68vw;height:56vh}
+  .big-icon{width:96px;height:96px}
+}
+.footer{padding:18px 0;color:var(--muted);font-size:14px}
