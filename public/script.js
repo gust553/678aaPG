@@ -16,10 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener noreferrer");
     // evita duplo clique
-    el.addEventListener("click", (e) => {
-      // se quiser rastrear clique via analytics insira aqui
-      // e.preventDefault(); window.open(AFFILIATE, "_blank");
-    });
+ el.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // 🔥 Evento de clique no Meta Pixel
+  if (typeof fbq === "function") {
+    fbq("track", "Lead");
+  }
+
+  // abre o link normalmente
+  window.open(AFFILIATE, "_blank");
+});
   });
 
   // carrossel: suavizar scroll ao tocar na borda
@@ -34,3 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }, {passive:false});
   }
 });
+
