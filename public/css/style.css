@@ -1,7 +1,14 @@
-body{margin:0;background:#000;color:#fff;font-family:Arial;text-align:center}
+
+body{margin:0;background:#000;color:#fff;font-family:Arial}
+.wrap{text-align:center;padding-top:30px}
+.title{font-size:28px;margin-bottom:10px}
+.filters{max-width:900px;margin:0 auto 30px}
+.filters button{margin:6px;padding:7px 14px;border-radius:20px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer}
+.filters button:hover{background:#fff;color:#000}
+.grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+.phone{width:260px;margin:auto}
+.frame{background:#111;border-radius:30px;padding:12px;box-shadow:0 0 20px rgba(255,255,255,.15)}
+.frame img{width:100%;border-radius:20px}
+.label{margin-top:8px;font-size:14px;color:#ccc}
 canvas{position:fixed;top:0;left:0;z-index:-1}
-.header{padding:30px}
-.filters button{margin:5px;padding:8px 14px;border-radius:20px;border:1px solid #fff;background:transparent;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;padding:40px}
-.card{background:#111;padding:15px;border-radius:16px}
-.card img{width:100%;border-radius:14px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
